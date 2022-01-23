@@ -50,8 +50,6 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	}
 	defer res.Body.Close()
 
-	fmt.Println("reach here?")
-
 	if res.StatusCode != 200 {
 		//log.Fatalf("status code error: %d %s", res.StatusCode, res.Status)
 		return events.APIGatewayProxyResponse{Body: string(failResponse), StatusCode: 200}, nil
